@@ -6,7 +6,7 @@
   <p style="font-family: sans-serif; font-size: 1.1rem; color: #666;">
     Professional Child Commercial Model • New Delhi, India
   </p>
-  <a href="https://aadrit-mangla-portfolio.web.app" target="_blank" style="background: #a89885; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: bold; font-family: sans-serif; font-size: 0.9rem; transition: 0.3s;">VISIT LIVE PORTFOLIO →</a>
+  <a href="https://aadritmangla.vercel.app" target="_blank" style="background: #a89885; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: bold; font-family: sans-serif; font-size: 0.9rem; transition: 0.3s;">VISIT LIVE PORTFOLIO →</a>
 </div>
 
 <br />
