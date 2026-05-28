@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Aadrit Mangla v1",
+  "description": "Premium casting and modeling portfolio for Aadrit Mangla, child commercial model based in New Delhi, India.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
