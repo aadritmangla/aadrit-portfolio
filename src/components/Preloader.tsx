@@ -42,9 +42,9 @@ export default function Preloader() {
                   decoding="async"
                 />
               </div>
-              <h1 className="font-serif text-2xl md:text-4xl tracking-tight text-warm-beige text-center">
+              <div className="font-serif text-2xl md:text-4xl tracking-tight text-warm-beige text-center">
                 Aadrit Mangla
-              </h1>
+              </div>
               <div className="flex items-center gap-3 mt-4 text-[10px] md:text-sm tracking-[0.2em] uppercase text-luxury-gold font-display text-center">
                 <span>Child Commercial Model</span>
                 <span className="w-1 h-1 rounded-full bg-luxury-gold" />

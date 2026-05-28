@@ -36,9 +36,9 @@ export default function CastingCard() {
           
           {/* Name & Intro */}
           <div className="mb-4">
-            <h1 className="text-5xl uppercase tracking-[0.2em] font-display font-medium text-black mb-4">
+            <h2 className="text-5xl uppercase tracking-[0.2em] font-display font-medium text-black mb-4">
               {modelProfile.name}
-            </h1>
+            </h2>
             <p className="text-sm font-light text-gray-800 leading-relaxed max-w-2xl">
               Comfortable on camera, expressive, and adapts naturally to direction. <br />
               Available for fashion, lifestyle, and commercial shoots.

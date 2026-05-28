@@ -66,9 +66,9 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
                 <span className="font-display text-[10px] uppercase tracking-[0.4em] text-luxury-gold mb-3 block">
                   Legal
                 </span>
-                <h1 className="font-serif text-3xl md:text-4xl tracking-tight mb-3">
+                <h2 className="font-serif text-3xl md:text-4xl tracking-tight mb-3">
                   Privacy Policy
-                </h1>
+                </h2>
                 <p className="font-display text-[11px] uppercase tracking-[0.3em] text-editorial-dark/50 dark:text-warm-beige/50">
                   Last Updated — May 2026
                 </p>
