@@ -1,9 +1,9 @@
-import { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Ruler, Sparkles, MapPin, Eye, Calendar, Scissors, Award, Compass } from 'lucide-react';
 import { motion, useInView, useSpring, useTransform } from 'motion/react';
 import { modelStats, modelProfile } from '../data';
 
-const AnimatedValue = ({ value }: { value: string | number }) => {
+const AnimatedValue = React.memo(({ value }: { value: string | number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
   
@@ -23,9 +23,9 @@ const AnimatedValue = ({ value }: { value: string | number }) => {
   }, [isInView, numValue, spring]);
 
   return <motion.span ref={ref}>{display}</motion.span>;
-};
+});
 
-export default function ReusableStats() {
+function ReusableStats() {
   // Helper to resolve suitable icons for various physical parameters
   const getIcon = (label: string) => {
     switch (label.toLowerCase()) {
@@ -147,3 +147,5 @@ export default function ReusableStats() {
     </section>
   );
 }
+
+export default React.memo(ReusableStats);

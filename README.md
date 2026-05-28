@@ -1,6 +1,6 @@
 <div align="center">
   <!-- LUXURY BRANDING: Replacing tech banner with Aadrit's Professional Headshot -->
-  <img width="400" src="https://i.ibb.co/hJGNzK0X/Headshot-Aadrit.jpg" alt="Aadrit Mangla - Professional Child Model" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" />
+  <img width="400" src="https://dphmyxzzoukqiilpmrsv.supabase.co/storage/v1/object/public/portfolio/Headshot/Headshot%20Aadrit.webp" alt="Aadrit Mangla - Professional Child Model" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" />
   <br />
   <h1 style="font-family: serif; font-size: 2.5rem; color: #1a1a1a; margin-top: 20px;">Aadrit Mangla | Digital Portfolio</h1>
   <p style="font-family: sans-serif; font-size: 1.1rem; color: #666;">
@@ -42,5 +42,3 @@ To ensure a world-class user experience, the following optimizations were implem
 - **Asset Compression:** All images are converted to **WebP** via lossy-less compression to reduce bandwidth by 70%.
 - **Local SEO:** Implemented `geo.region` and `geo.placename` meta-tags to dominate New Delhi casting searches.
 - **Responsive Design:** Fully optimized for mobile-first viewing (the primary device for casting agents).
-
----

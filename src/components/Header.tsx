@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Menu, X, ArrowRight, Sun, Moon, Instagram, Mail, Phone } from 'lucide-react';
 
@@ -7,7 +7,7 @@ interface HeaderProps {
   toggleDarkMode?: () => void;
 }
 
-export default function Header({ isDarkMode = false, toggleDarkMode }: HeaderProps) {
+function Header({ isDarkMode = false, toggleDarkMode }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -290,3 +290,6 @@ export default function Header({ isDarkMode = false, toggleDarkMode }: HeaderPro
     </header>
   );
 }
+
+export default React.memo(Header);
+

@@ -7,7 +7,7 @@ interface FooterProps {
   onPrivacyClick?: () => void;
 }
 
-export default function ReusableFooter({ onPrivacyClick }: FooterProps) {
+function ReusableFooter({ onPrivacyClick }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   const handleScrollToSection = (e: React.MouseEvent, id: string) => {
@@ -114,3 +114,5 @@ export default function ReusableFooter({ onPrivacyClick }: FooterProps) {
     </footer>
   );
 }
+
+export default React.memo(ReusableFooter);
