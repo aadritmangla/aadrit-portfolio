@@ -13,45 +13,45 @@ export const modelProfile: ModelProfile = {
   email: "aadritmangla@gmail.com",
   parentManager: 'Represented by Parents (Rahul Mangla)',
   shortBio: 'Aadrit is an active, friendly 8-year-old based in New Delhi. Naturally expressive and comfortable in front of the camera, he brings genuine warmth and joy to kids apparel, print, and commercial shoots.',
-  detailedBio: 'Based in New Delhi, Aadrit brings a cheerful, natural presence to every shoot. He adapts comfortably to direction, stays engaged during sessions, and enjoys exploring a variety of styles from casual and school wear to traditional Indian looks. All schedules, collaborations, and bookings are thoughtfully managed by his supportive parents to ensure a balanced, positive, and child-friendly experience.',
+  detailedBio: 'Based in New Delhi, Aadrit brings a cheerful, natural presence and remarkable on-camera confidence to high-end commercial campaigns. He adapts seamlessly to directorial cues, maintains high energy during active print sessions, and easily transitions between casual, editorial, and traditional Indian styling. All schedules, brand collaborations, and bookings are thoughtfully managed by his parents to ensure a highly professional and positive production experience.',
   
   // THE HERO IMAGE (High-res direct link)
-  heroImage: "https://i.ibb.co/hJGNzK0X/Headshot-Aadrit.jpg", 
+  heroImage: "https://dphmyxzzoukqiilpmrsv.supabase.co/storage/v1/object/public/portfolio/Headshot/Headshot%20Aadrit.webp", 
   gallery: [
     {
-      url: "https://i.ibb.co/hJGNzK0X/Headshot-Aadrit.jpg",
+      url: "https://dphmyxzzoukqiilpmrsv.supabase.co/storage/v1/object/public/portfolio/Headshot/Headshot%20Aadrit.webp",
       category: "Portrait",
-      alt: "Aadrit Mangla - Signature High-End Casting Headshot"
+      alt: "Aadrit Mangla - Signature High-End Kids Casting Headshot"
     },
     {
-      url: "https://i.ibb.co/bhqMGWp/Headshot.jpg",
+      url: "https://dphmyxzzoukqiilpmrsv.supabase.co/storage/v1/object/public/portfolio/Gallery/Headshot.webp",
       category: "Portrait",
-      alt: "Aadrit Mangla - Close-up expressive portrait"
+      alt: "Aadrit Mangla - Expressive Child Model Portrait"
     },
     {
-      url: "https://i.ibb.co/0jbfWhXP/aadrit-traditional-1779890120169.png",
+      url: "https://dphmyxzzoukqiilpmrsv.supabase.co/storage/v1/object/public/portfolio/Gallery/aadrit_traditional_1779890120169.webp",
       category: "Traditional",
-      alt: "Aadrit Mangla - Traditional Indian Festive Wear"
+      alt: "Aadrit Mangla - Traditional Indian Festive Wear Casting"
     },
     {
-      url: "https://i.ibb.co/YFQqmy2F/Magzine-COver.png",
+      url: "https://dphmyxzzoukqiilpmrsv.supabase.co/storage/v1/object/public/portfolio/Gallery/Magzine%20COver.webp",
       category: "Editorial",
-      alt: "Aadrit Mangla - High-fashion magazine cover"
+      alt: "Aadrit Mangla - High-Fashion Magazine Editorial"
     },
     {
-      url: "https://i.ibb.co/W4j659Rs/Outdoor-Pose.png",
+      url: "https://dphmyxzzoukqiilpmrsv.supabase.co/storage/v1/object/public/portfolio/Gallery/Outdoor%20Pose.webp",
       category: "Outdoor",
-      alt: "Aadrit Mangla - Natural lighting outdoor shoot"
+      alt: "Aadrit Mangla - Natural Light Outdoor Child Modeling"
     },
     {
-      url: "https://i.ibb.co/Kc7jm4x1/Stunt-Shot.png",
+      url: "https://dphmyxzzoukqiilpmrsv.supabase.co/storage/v1/object/public/portfolio/Gallery/Stunt%20Shot.webp",
       category: "Action",
-      alt: "Aadrit Mangla - Dynamic action and stunt pose"
+      alt: "Aadrit Mangla - Dynamic Action and Stunt Pose Child Actor"
     },
     {
       url: "https://dphmyxzzoukqiilpmrsv.supabase.co/storage/v1/object/public/portfolio/Gallery/Full%20Length.webp",
       category: "Full Length",
-      alt: "Aadrit Mangla - Full length pose"
+      alt: "Aadrit Mangla - Full Length Commercial Model Pose"
     }
   ]
 };
