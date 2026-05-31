@@ -1,101 +1,211 @@
 import React from 'react';
-import { modelProfile, modelStats } from '../data';
+import { modelProfile } from '../data';
 
 export default function CastingCard() {
-  const getStat = (label: string) => modelStats.find(s => s.label === label)?.value || '';
-
   return (
     <>
       <style>
         {`
           @media print {
             @page {
-              margin: 0;
+              margin: 8mm;
               size: A4 portrait;
             }
             body {
               -webkit-print-color-adjust: exact;
               print-color-adjust: exact;
-              margin: 0;
+              background-color: white !important;
+              color: black !important;
+            }
+            .print-shadow-none {
+              box-shadow: none !important;
             }
           }
         `}
       </style>
-      <div className="hidden print:!flex flex-col w-full max-w-[210mm] min-h-screen lg:h-[297mm] mx-auto bg-white text-black font-sans relative overflow-hidden box-border">
-        {/* 70% Photo Area */}
-        <div className="relative w-full overflow-hidden" style={{ height: '65%' }}>
-          <img 
-            src={modelProfile.heroImage} 
-            alt="Aadrit Mangla" 
-            className="w-full h-full object-cover object-top" 
-          />
+      
+      {/* Hidden during normal view, visible during print */}
+      <div className="hidden print:!flex flex-row w-full h-[278mm] max-w-[210mm] mx-auto bg-white text-black font-sans relative overflow-hidden box-border gap-6 p-4">
+        
+        {/* LEFT COLUMN: Large Hero Portrait (40% width) */}
+        <div className="w-[42%] h-full flex flex-col justify-between border-r-2 border-black pr-6">
+          <div className="h-[85%] w-full overflow-hidden border-2 border-black bg-neutral-100">
+            <img 
+              src={modelProfile.heroImage} 
+              alt="Aadrit Mangla" 
+              className="w-full h-full object-cover object-top" 
+            />
+          </div>
+          
+          {/* Aesthetic lower corner block on left column */}
+          <div className="pt-4 flex flex-col justify-end flex-grow">
+            <span className="font-serif text-[11px] text-zinc-500 uppercase tracking-widest block mb-1">
+              Official Comp Card
+            </span>
+            <div className="h-[2px] bg-black w-12 mb-2" />
+            <span className="font-serif font-bold text-[15px] tracking-wide text-black">
+              AADRIT MANGLA
+            </span>
+            <span className="font-display text-[9px] text-zinc-600 uppercase tracking-wider block mt-0.5">
+              New Delhi, India
+            </span>
+          </div>
         </div>
 
-        {/* Profile & Info Section (approx 35%) */}
-        <div className="flex flex-col px-12 py-10 justify-between flex-1 bg-white relative">
+        {/* RIGHT COLUMN: Rich Profiles & Specifications (58% width) */}
+        <div className="w-[58%] h-full flex flex-col justify-between text-left">
           
-          {/* Name & Intro */}
-          <div className="mb-4 flex justify-between items-end">
-            <div>
-              <h2 className="text-5xl uppercase tracking-[0.2em] font-display font-medium text-black mb-4">
-                {modelProfile.name}
-              </h2>
-              <p className="text-sm font-light text-gray-800 leading-relaxed max-w-2xl">
-                Comfortable on camera, expressive, and adapts naturally to direction. <br />
-                Available for fashion, lifestyle, and commercial shoots.
+          {/* AADRIT MANGLA Header */}
+          <div className="space-y-1.5 pb-2">
+            <h1 className="text-4xl uppercase tracking-[0.25em] font-display font-black text-black leading-none">
+              AADRIT MANGLA
+            </h1>
+            <div className="space-y-0.5 pt-1">
+              <p className="font-serif italic text-sm text-neutral-800 leading-tight">
+                "A smile people remember."
+              </p>
+              <p className="font-serif italic text-sm text-neutral-800 leading-tight">
+                "An energy cameras love."
               </p>
             </div>
-            <div className="text-right shrink-0 pb-1 pl-4">
-              <span className="font-serif text-black font-bold text-[13px] tracking-wide block">
-                Making cameras smile since 2018 😄
+            <p className="text-[11px] font-display uppercase tracking-widest text-zinc-600 font-bold">
+              Expressive Child Creator • New Delhi, India
+            </p>
+          </div>
+
+          {/* Quick Profile Section */}
+          <div className="border-t-2 border-black pt-2 pb-2">
+            <h2 className="text-[11px] uppercase tracking-[0.2em] font-display font-extrabold text-black mb-1.5">
+              QUICK PROFILE
+            </h2>
+            <div className="grid grid-cols-2 gap-y-1 gap-x-4">
+              <div className="text-[11px] text-neutral-800">
+                <strong className="text-black uppercase tracking-wider text-[10px]">Age:</strong> 8 Years
+              </div>
+              <div className="text-[11px] text-neutral-800">
+                <strong className="text-black uppercase tracking-wider text-[10px]">Height:</strong> 126 cm
+              </div>
+              <div className="text-[11px] text-neutral-800">
+                <strong className="text-black uppercase tracking-wider text-[10px]">Location:</strong> New Delhi
+              </div>
+              <div className="text-[11px] text-neutral-800">
+                <strong className="text-black uppercase tracking-wider text-[10px]">Categories:</strong> Fashion • Lifestyle • Ethnic • Commercial
+              </div>
+            </div>
+          </div>
+
+          {/* Why Aadrit Section */}
+          <div className="border-t-2 border-black pt-2 pb-2">
+            <h2 className="text-[11px] uppercase tracking-[0.2em] font-display font-extrabold text-black mb-2">
+              WHY AADRIT
+            </h2>
+            <div className="space-y-1.5">
+              <div className="text-[11px] text-neutral-800">
+                <span className="text-black font-bold uppercase text-[10px] tracking-wider">😊 Expressive:</span> Natural reactions that feel real.
+              </div>
+              <div className="text-[11px] text-neutral-800">
+                <span className="text-black font-bold uppercase text-[10px] tracking-wider">🎬 Camera Friendly:</span> Comfortable, confident, and easy to direct.
+              </div>
+              <div className="text-[11px] text-neutral-800">
+                <span className="text-black font-bold uppercase text-[10px] tracking-wider">⚡ Positive Energy:</span> The kind of presence people remember.
+              </div>
+            </div>
+          </div>
+
+          {/* Measurements Section */}
+          <div className="border-t-2 border-black pt-2 pb-2">
+            <h2 className="text-[11px] uppercase tracking-[0.2em] font-display font-extrabold text-black mb-1.5">
+              MEASUREMENTS
+            </h2>
+            <div className="grid grid-cols-2 gap-y-1 gap-x-4">
+              <div className="text-[11px] text-neutral-800">
+                <strong className="text-black uppercase tracking-wider text-[10px]">Clothing:</strong> US 6
+              </div>
+              <div className="text-[11px] text-neutral-800">
+                <strong className="text-black uppercase tracking-wider text-[10px]">Shoes:</strong> US 9
+              </div>
+              <div className="text-[11px] text-neutral-800">
+                <strong className="text-black uppercase tracking-wider text-[10px]">Hair:</strong> Black
+              </div>
+              <div className="text-[11px] text-neutral-800">
+                <strong className="text-black uppercase tracking-wider text-[10px]">Eyes:</strong> Black
+              </div>
+            </div>
+          </div>
+
+          {/* Available For Section */}
+          <div className="border-t-2 border-black pt-2 pb-2">
+            <h2 className="text-[11px] uppercase tracking-[0.2em] font-display font-extrabold text-black mb-1.5">
+              AVAILABLE FOR
+            </h2>
+            <div className="grid grid-cols-2 gap-1 text-[11px] text-neutral-800">
+              <div>• Fashion Campaigns</div>
+              <div>• Lifestyle Shoots</div>
+              <div>• Digital Advertising</div>
+              <div>• Branded Content</div>
+              <div className="col-span-2">• Commercial Productions</div>
+            </div>
+          </div>
+
+          {/* Contact & QR Code Section */}
+          <div className="border-t-2 border-black pt-2 pb-2 flex justify-between items-center gap-4">
+            <div className="space-y-1">
+              <h2 className="text-[11px] uppercase tracking-[0.2em] font-display font-extrabold text-black mb-1">
+                CONTACT
+              </h2>
+              <div className="text-[11px] text-neutral-800 font-bold">Rahul Mangla (Parent Manager)</div>
+              <div className="text-[11px] text-neutral-800">+91 99712 71291</div>
+              <div className="text-[11px] text-neutral-800">aadritmangla@gmail.com</div>
+              <div className="text-[11px] text-neutral-800">www.aadritmangla.com</div>
+              <div className="text-[11px] text-neutral-800">@aadritmangla</div>
+            </div>
+            
+            {/* Real SVG QR Code */}
+            <div className="flex flex-col items-center text-center shrink-0 border border-neutral-200 p-1.5 bg-neutral-50">
+              <svg width="64" height="64" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" strokeWidth="1">
+                {/* 3 corner position squares */}
+                <path d="M1 1h7v7H1V1zm1 1v5h5V2H2zm1 1h3v3H3V3zM21 1h7v7h-7V1zm1 1v5h5V2h-5zm1 1h3v3h-3V3zM1 21h7v7H1v-7zm1 1v5h5v-5H2zm1 1h3v3H3v-3z" fill="black" stroke="none"/>
+                {/* Random QR structures */}
+                <rect x="11" y="2" width="2" height="2" fill="black" stroke="none"/>
+                <rect x="15" y="1" width="1" height="3" fill="black" stroke="none"/>
+                <rect x="18" y="2" width="2" height="1" fill="black" stroke="none"/>
+                <rect x="11" y="6" width="3" height="1" fill="black" stroke="none"/>
+                <rect x="16" y="5" width="2" height="2" fill="black" stroke="none"/>
+                <rect x="11" y="10" width="1" height="3" fill="black" stroke="none"/>
+                <rect x="13" y="12" width="4" height="2" fill="black" stroke="none"/>
+                <rect x="18" y="10" width="2" height="1" fill="black" stroke="none"/>
+                <rect x="22" y="11" width="3" height="1" fill="black" stroke="none"/>
+                <rect x="26" y="10" width="1" height="4" fill="black" stroke="none"/>
+                <rect x="2" y="11" width="2" height="2" fill="black" stroke="none"/>
+                <rect x="6" y="13" width="3" height="1" fill="black" stroke="none"/>
+                <rect x="1" y="16" width="3" height="1" fill="black" stroke="none"/>
+                <rect x="5" y="15" width="2" height="3" fill="black" stroke="none"/>
+                <rect x="9" y="18" width="4" height="1" fill="black" stroke="none"/>
+                <rect x="2" y="19" width="1" height="1" fill="black" stroke="none"/>
+                <rect x="10" y="21" width="2" height="4" fill="black" stroke="none"/>
+                <rect x="14" y="22" width="3" height="2" fill="black" stroke="none"/>
+                <rect x="18" y="21" width="1" height="3" fill="black" stroke="none"/>
+                <rect x="21" y="23" width="4" height="1" fill="black" stroke="none"/>
+                <rect x="26" y="21" width="2" height="2" fill="black" stroke="none"/>
+                <rect x="14" y="26" width="5" height="1" fill="black" stroke="none"/>
+                <rect x="21" y="26" width="2" height="2" fill="black" stroke="none"/>
+                <rect x="25" y="25" width="3" height="3" fill="black" stroke="none"/>
+              </svg>
+              <span className="text-[7px] uppercase tracking-wider font-bold text-black mt-1">
+                Scan Portfolio
               </span>
             </div>
           </div>
 
-          {/* Details Grid */}
-          <div className="grid grid-cols-3 gap-10 py-6 border-y border-neutral-200 flex-1 content-center">
-            {/* Snapshot */}
-            <div className="flex flex-col space-y-2">
-              <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-bold mb-1">Snapshot</span>
-              <span className="text-xs font-medium uppercase tracking-wider text-black">Based in: New Delhi, India</span>
-              <span className="text-xs font-medium uppercase tracking-wider text-black">Age: {modelProfile.age}</span>
-              <span className="text-xs font-medium uppercase tracking-wider text-black">Height: {getStat('Height')} cm</span>
-            </div>
-
-            {/* Measurements */}
-            <div className="flex flex-col space-y-2">
-              <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-bold mb-1">Measurements</span>
-              <span className="text-xs font-medium uppercase tracking-wider text-black">Clothing: US 6</span>
-              <span className="text-xs font-medium uppercase tracking-wider text-black">Shoes: {getStat('Shoes')}</span>
-              <span className="text-xs font-medium uppercase tracking-wider text-black">Hair: {getStat('Hair Color')}</span>
-              <span className="text-xs font-medium uppercase tracking-wider text-black">Eyes: {getStat('Eye Color')}</span>
-            </div>
-
-            {/* Categories */}
-            <div className="flex flex-col space-y-2">
-              <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-bold mb-1">Categories</span>
-              <span className="text-xs font-medium uppercase tracking-wider text-black">Fashion</span>
-              <span className="text-xs font-medium uppercase tracking-wider text-black">Lifestyle</span>
-              <span className="text-xs font-medium uppercase tracking-wider text-black">Ethnic</span>
-              <span className="text-xs font-medium uppercase tracking-wider text-black">Commercial</span>
-            </div>
-          </div>
-
-          {/* Contact */}
-          <div className="flex justify-between items-end mt-6">
-            <div className="flex flex-col space-y-1.5">
-              <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-bold mb-1">Contact</span>
-              <span className="text-xs font-medium tracking-wide text-black">WhatsApp: 9971271291</span>
-              <span className="text-xs font-medium tracking-wide text-black">Email: aadritmangla@gmail.com</span>
-            </div>
-            <div className="flex flex-col space-y-1.5 items-end">
-              <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-bold mb-1">Links</span>
-              <span className="text-xs font-medium tracking-wide text-black">www.aadritmangla.com</span>
-              <span className="text-xs font-medium tracking-wide text-black">@aadritmangla</span>
-            </div>
+          {/* Footer signature line */}
+          <div className="border-t-2 border-b-2 border-black py-2.5 text-center mt-auto">
+            <span className="font-display font-extrabold text-[12px] uppercase tracking-[0.15em] text-black">
+              Making cameras smile since 2018 😄
+            </span>
           </div>
 
         </div>
+
       </div>
     </>
   );

@@ -73,17 +73,26 @@ function ReusableFooter({ onPrivacyClick }: FooterProps) {
             {[
               { id: 'about', label: 'Profile' },
               { id: 'portfolio', label: 'Portfolio' },
-              { id: 'stats', label: 'Measurements' },
+              { id: 'print', label: 'Profile Sheet (PDF)', isPrint: true },
               { id: 'booking', label: 'Booking' },
             ].map((item) => (
               <li key={item.id}>
-                <a 
-                  href={`#${item.id}`} 
-                  onClick={(e) => handleScrollToSection(e, `#${item.id}`)} 
-                  className="hover:text-luxury-gold transition-colors duration-300 uppercase"
-                >
-                  {item.label}
-                </a>
+                {item.isPrint ? (
+                  <button 
+                    onClick={() => window.print()}
+                    className="hover:text-luxury-gold transition-colors duration-300 uppercase cursor-pointer bg-transparent border-none p-0 inline font-display text-[10px] uppercase tracking-[0.2em] text-warm-beige/60 font-medium"
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <a 
+                    href={`#${item.id}`} 
+                    onClick={(e) => handleScrollToSection(e, `#${item.id}`)} 
+                    className="hover:text-luxury-gold transition-colors duration-300 uppercase"
+                  >
+                    {item.label}
+                  </a>
+                )}
               </li>
             ))}
           </ul>

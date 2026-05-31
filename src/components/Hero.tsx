@@ -111,16 +111,23 @@ export default function Hero() {
               <button
                 id="hero-cta-portfolio"
                 onClick={() => handleScrollTo('#portfolio')}
-                className="bg-editorial-dark text-warm-beige hover:bg-luxury-gold text-[10px] md:text-xs uppercase tracking-[0.15em] font-display font-bold py-3 px-6 transition-all duration-500 shadow-sm border border-editorial-dark hover:border-luxury-gold text-center active:scale-95"
+                className="bg-editorial-dark text-warm-beige hover:bg-luxury-gold text-[10px] md:text-xs uppercase tracking-[0.15em] font-display font-bold py-3 px-6 transition-all duration-500 shadow-sm border border-editorial-dark hover:border-luxury-gold text-center active:scale-95 cursor-pointer"
               >
                 View Portfolio
               </button>
               <button
                 id="hero-cta-reels"
                 onClick={() => handleScrollTo('#reels-section')}
-                className="border border-editorial-dark/10 text-editorial-dark hover:text-luxury-gold hover:border-luxury-gold text-[10px] md:text-xs uppercase tracking-[0.15em] font-display font-bold py-3 px-6 transition-all duration-500 text-center bg-transparent active:scale-95"
+                className="border border-editorial-dark/15 text-editorial-dark hover:text-luxury-gold hover:border-luxury-gold text-[10px] md:text-xs uppercase tracking-[0.15em] font-display font-bold py-3 px-6 transition-all duration-500 text-center bg-white/40 active:scale-95 cursor-pointer font-extrabold"
               >
                 Watch Reels
+              </button>
+              <button
+                id="hero-cta-pdf"
+                onClick={() => window.print()}
+                className="border border-luxury-gold/30 text-luxury-gold hover:text-white hover:bg-luxury-gold text-[10px] md:text-xs uppercase tracking-[0.15em] font-display font-bold py-3 px-6 transition-all duration-500 text-center bg-transparent active:scale-95 cursor-pointer font-black"
+              >
+                Profile Sheet (PDF)
               </button>
             </motion.div>
 
