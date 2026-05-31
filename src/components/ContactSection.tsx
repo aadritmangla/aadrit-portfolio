@@ -6,24 +6,24 @@ import { modelProfile } from '../data';
 
 export default function ContactSection() {
   return (
-    <section id="booking" className="py-16 md:py-24 bg-warm-beige border-t border-warm-ivory scroll-mt-12">
+    <section id="booking" className="py-10 md:py-14 bg-warm-beige border-t border-warm-ivory scroll-mt-12">
       <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="space-y-12"
+          className="space-y-6 md:space-y-8"
         >
           <div className="space-y-4 flex flex-col items-center">
             <span className="font-display text-[10px] tracking-[0.2em] uppercase text-luxury-gold font-bold block">
-              Direct Access
+              Contact Section
             </span>
             <h2 className="font-serif text-4xl md:text-5xl text-editorial-dark tracking-tight">
-              Let's Connect
+              Have A Project In Mind?
             </h2>
             <div className="w-12 h-[1px] bg-luxury-gold my-4" />
-            <p className="text-base text-editorial-gray/80 leading-relaxed font-light max-w-md">
-              For casting calls, campaigns, collaborations, and brand inquiries, use the direct lines below. We respond swiftly to professional requests.
+            <p className="text-base text-editorial-gray/80 leading-relaxed font-light max-w-lg">
+              For campaigns, content, collaborations, and creative opportunities.
             </p>
           </div>
 
@@ -32,7 +32,7 @@ export default function ContactSection() {
             {[
               { icon: Instagram, label: 'Instagram', val: modelProfile.instagram, href: `https://instagram.com/${modelProfile.instagram.replace('@','')}` },
               { icon: Mail, label: 'Email', val: modelProfile.email, href: `mailto:${modelProfile.email}` },
-              { icon: Phone, label: 'WhatsApp', val: modelProfile.phone, href: `https://wa.me/${modelProfile.phone.replace(/\s+/g, '')}` },
+              { icon: Phone, label: 'WhatsApp', val: modelProfile.phone, href: `https://wa.me/${modelProfile.phone.replace(/\D/g, '')}` },
             ].map((item, i) => (
               <a
                 key={i}
@@ -57,10 +57,16 @@ export default function ContactSection() {
             ))}
           </div>
 
-          <div className="pt-10 flex flex-col items-center">
-            <span className="font-display text-[10px] tracking-[0.2em] uppercase text-luxury-gold font-bold block mb-6">
-              Performance Reel
+          <div id="reels-section" className="pt-10 flex flex-col items-center scroll-mt-20">
+            <span className="font-display text-[10px] tracking-[0.2em] uppercase text-luxury-gold font-bold block">
+              Video Section
             </span>
+            <h3 className="font-serif text-3xl md:text-4xl text-editorial-dark tracking-tight mt-1 mb-2">
+              Expressions In Motion
+            </h3>
+            <p className="text-xs text-editorial-gray/80 max-w-lg mb-8 font-light leading-relaxed">
+              Watch Aadrit's dance performances, creative content, and everyday moments that showcase the personality behind the smile.
+            </p>
             <div className="max-w-md w-full">
               <ReelStack />
             </div>

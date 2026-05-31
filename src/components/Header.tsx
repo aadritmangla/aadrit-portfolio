@@ -15,8 +15,8 @@ function Header({ isDarkMode = false, toggleDarkMode }: HeaderProps) {
 
   const handleShare = async () => {
     const shareData = {
-      title: "Aadrit Mangla - Child Model Profile",
-      text: "Explore 8-year-old Aadrit's portfolio of children's clothing shoots and apparel fits.",
+      title: "Aadrit Mangla | Expressive Child Creator",
+      text: "Explore Aadrit's portfolio of expressive dance, creative content, and lifestyle moments.",
       url: window.location.href,
     };
 
@@ -165,11 +165,9 @@ function Header({ isDarkMode = false, toggleDarkMode }: HeaderProps) {
             </div>
 
             <a
-              href="#booking"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick('#booking');
-              }}
+              href="https://wa.me/919971271291"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-editorial-dark text-warm-beige hover:bg-luxury-gold text-[10px] uppercase tracking-widest font-display font-medium py-2.5 px-6 transition-all duration-300 rounded-full"
             >
               Book Aadrit
@@ -240,12 +238,10 @@ function Header({ isDarkMode = false, toggleDarkMode }: HeaderProps) {
 
           <div className="pt-4">
             <a
-              href="#booking"
+              href="https://wa.me/919971271291"
+              target="_blank"
+              rel="noopener noreferrer"
               id="book-btn-mobile"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick('#booking');
-              }}
               className="w-full inline-flex justify-center items-center gap-2 bg-editorial-dark text-warm-beige hover:bg-luxury-gold text-xs uppercase tracking-widest font-display font-medium py-4 px-5 transition-all duration-300 rounded-full shadow-lg"
             >
               Book Aadrit

@@ -46,7 +46,7 @@ export default function Preloader() {
                 Aadrit Mangla
               </div>
               <div className="flex items-center gap-3 mt-4 text-[10px] md:text-sm tracking-[0.2em] uppercase text-luxury-gold font-display text-center">
-                <span>Child Commercial Model</span>
+                <span>Expressive Child Creator</span>
                 <span className="w-1 h-1 rounded-full bg-luxury-gold" />
                 <span>New Delhi</span>
               </div>

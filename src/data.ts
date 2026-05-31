@@ -3,7 +3,7 @@ import { GalleryItem, StatItem, ModelProfile, CategoryType } from './types';
 
 export const modelProfile: ModelProfile = {
   name: "Aadrit Mangla",
-  profession: 'Professional Talent',
+  profession: 'Expressive Child Creator',
   status: "Active",
   age: "8 Yrs",
   height: '126 cm',
@@ -12,8 +12,8 @@ export const modelProfile: ModelProfile = {
   phone: "+91-9971271291",
   email: "aadritmangla@gmail.com",
   parentManager: 'Represented by Parents (Rahul Mangla)',
-  shortBio: 'Aadrit is an active, friendly 8-year-old based in New Delhi. Naturally expressive and comfortable in front of the camera, he brings genuine warmth and joy to kids apparel, print, and commercial shoots.',
-  detailedBio: 'Based in New Delhi, Aadrit brings a cheerful, natural presence and remarkable on-camera confidence to high-end commercial campaigns. He adapts seamlessly to directorial cues, maintains high energy during active print sessions, and easily transitions between casual, editorial, and traditional Indian styling. All schedules, brand collaborations, and bookings are thoughtfully managed by his parents to ensure a highly professional and positive production experience.',
+  shortBio: 'Aadrit is an expressive child creator who loves performing, dancing, and bringing stories to life. A smile people remember. An energy cameras love.',
+  detailedBio: "Aadrit is happiest when he's performing.\nWhether he's dancing, creating content, or simply having fun in front of the camera, he brings genuine energy and a smile that's hard to miss.",
   
   // THE HERO IMAGE (High-res direct link)
   heroImage: "https://dphmyxzzoukqiilpmrsv.supabase.co/storage/v1/object/public/portfolio/Headshot/Headshot%20Aadrit.webp", 
@@ -72,10 +72,16 @@ export const modelStats: StatItem[] = [
 // UNIFIED GALLERY
 export const galleryItems: GalleryItem[] = modelProfile.gallery.map((item, index) => {
   const c = item.category.toLowerCase();
-  let category: CategoryType = 'commercial';
-  if (c.includes('portrait')) category = 'headshots';
-  else if (c === 'traditional') category = 'traditional';
-  else if (c.includes('full')) category = 'full-length';
+  let category: CategoryType = 'fashion';
+  if (c.includes('portrait') || c.includes('headshot')) {
+    category = 'expressions';
+  } else if (c.includes('traditional')) {
+    category = 'traditional';
+  } else if (c.includes('outdoor') || c.includes('action')) {
+    category = 'lifestyle';
+  } else if (c.includes('editorial') || c.includes('full') || c.includes('commercial')) {
+    category = 'fashion';
+  }
   
   return {
     id: `g-${index}`,

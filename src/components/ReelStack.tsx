@@ -74,6 +74,7 @@ const ReelItem = ({ reel, isActive, onClick, index, activeIndex }: { reel: any, 
           ref={videoRef}
           key={reel.src}
           src={reel.src}
+          preload="metadata"
           autoPlay={isActive}
           loop
           muted={!isActive}

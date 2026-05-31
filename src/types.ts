@@ -4,7 +4,7 @@ export interface StatItem {
   unit?: string;
 }
 
-export type CategoryType = 'all' | 'headshots' | 'full-length' | 'commercial' | 'traditional';
+export type CategoryType = 'expressions' | 'lifestyle' | 'fashion' | 'traditional' | 'measurements';
 
 export interface GalleryItem {
   id: string;

@@ -13,16 +13,16 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center bg-warm-beige pt-20 md:pt-0 overflow-hidden"
+      className="relative min-h-[85vh] lg:min-h-[90vh] flex items-center bg-warm-beige pt-20 md:pt-0 overflow-hidden"
     >
       {/* Background soft geometric detail */}
       <div className="absolute right-0 top-0 w-1/3 h-full bg-warm-ivory hidden lg:block -z-1" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full py-8 md:py-12 lg:py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full py-6 md:py-8 lg:py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-center">
           
           {/* Text/Details Side */}
-          <div className="lg:col-span-5 z-10 space-y-4 md:space-y-6 flex flex-col justify-center order-2 lg:order-1">
+          <div className="lg:col-span-5 z-10 space-y-3.5 md:space-y-5 flex flex-col justify-center order-2 lg:order-1">
             
             {/* Top Agency Tag/Availability */}
             <motion.div
@@ -32,7 +32,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 bg-warm-ivory/60 border border-luxury-gold/10 py-1 px-2.5 w-fit text-[8px] text-editorial-gray tracking-[0.12em] font-display font-medium"
             >
               <CheckCircle size={11} className="text-luxury-gold" />
-              <span>COMMERCIAL MODEL • NEW DELHI</span>
+              <span>EXPRESSIVE CHILD CREATOR • NEW DELHI</span>
             </motion.div>
 
             {/* Main Name & Subtitle */}
@@ -50,12 +50,26 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="flex items-center gap-3 text-[10px] md:text-xs uppercase tracking-[0.25em] text-luxury-gold font-display font-bold"
+                className="space-y-1 md:space-y-1.5"
               >
-                <span>{modelProfile.profession}</span>
-                <span className="w-1 h-1 rounded-full bg-luxury-gold/30" />
-                <span>{modelProfile.location}</span>
+                <div className="text-[11px] md:text-sm uppercase tracking-[0.25em] text-editorial-dark font-display font-extrabold">
+                  Expressive Child Creator
+                </div>
+                <div className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-luxury-gold font-display font-medium">
+                  Dance • Expressions • Lifestyle
+                </div>
               </motion.div>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.25 }}
+                className="text-[14px] md:text-[17px] font-sans text-editorial-gray/90 leading-relaxed tracking-normal max-w-md pt-1 font-medium"
+              >
+                A smile people remember.
+                <br />
+                An energy cameras love.
+              </motion.p>
             </div>
 
             {/* Quick Specs Highlight Box */}
@@ -95,18 +109,18 @@ export default function Hero() {
               className="flex flex-col sm:flex-row gap-2.5 pt-1"
             >
               <button
-                id="hero-cta-book"
-                onClick={() => handleScrollTo('#booking')}
-                className="bg-editorial-dark text-warm-beige hover:bg-luxury-gold text-[10px] md:text-xs uppercase tracking-[0.15em] font-display font-bold py-3 px-6 transition-all duration-500 shadow-sm border border-editorial-dark hover:border-luxury-gold text-center active:scale-95"
-              >
-                Book Aadrit Now
-              </button>
-              <button
                 id="hero-cta-portfolio"
                 onClick={() => handleScrollTo('#portfolio')}
-                className="border border-editorial-dark/10 text-editorial-dark hover:text-luxury-gold hover:border-luxury-gold text-[10px] md:text-xs uppercase tracking-[0.15em] font-display font-bold py-3 px-6 transition-all duration-500 text-center bg-transparent active:scale-95"
+                className="bg-editorial-dark text-warm-beige hover:bg-luxury-gold text-[10px] md:text-xs uppercase tracking-[0.15em] font-display font-bold py-3 px-6 transition-all duration-500 shadow-sm border border-editorial-dark hover:border-luxury-gold text-center active:scale-95"
               >
                 View Portfolio
+              </button>
+              <button
+                id="hero-cta-reels"
+                onClick={() => handleScrollTo('#reels-section')}
+                className="border border-editorial-dark/10 text-editorial-dark hover:text-luxury-gold hover:border-luxury-gold text-[10px] md:text-xs uppercase tracking-[0.15em] font-display font-bold py-3 px-6 transition-all duration-500 text-center bg-transparent active:scale-95"
+              >
+                Watch Reels
               </button>
             </motion.div>
 
@@ -151,7 +165,7 @@ export default function Hero() {
                 
                 {/* Photo Tag */}
                 <span className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm text-editorial-dark text-[7px] tracking-[0.25em] uppercase font-display font-bold py-1 px-2 border border-warm-ivory">
-                  Main Portfolio
+                  HeadShot
                 </span>
               </div>
             </motion.div>

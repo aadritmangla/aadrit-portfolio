@@ -13,6 +13,7 @@ import Preloader from './components/Preloader';
 import FloatingBookingButton from './components/FloatingBookingButton';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import CastingCard from './components/CastingCard';
+import InstagramSection from './components/InstagramSection';
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -55,6 +56,7 @@ export default function App() {
           <About />
           <Portfolio />
           <Stats />
+          <InstagramSection />
           <ContactSection />
         </main>
 

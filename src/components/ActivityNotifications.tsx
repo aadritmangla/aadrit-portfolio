@@ -17,7 +17,7 @@ const notifications: NotificationItem[] = [
     timeAgo: "2 mins ago",
   },
   {
-    message: "📍 Someone from Haryana viewed Aadrit's commercial work",
+    message: "📍 Someone from Haryana viewed Aadrit's creative collaborations",
     timeAgo: "5 mins ago",
   },
   {
@@ -29,15 +29,15 @@ const notifications: NotificationItem[] = [
     timeAgo: "12 mins ago",
   },
   {
-    message: "🎬 Someone from Chandigarh recently watched Aadrit’s showreel",
+    message: "🎬 Someone from Chandigarh recently watched Aadrit’s reels",
     timeAgo: "18 mins ago",
   },
   {
-    message: "👀 New visitor from New Delhi explored the kids apparel gallery",
+    message: "👀 New visitor from New Delhi explored the expressions gallery",
     timeAgo: "25 mins ago",
   },
   {
-    message: "🌍 A fashion enthusiast from Lucknow explored Aadrit’s portfolio",
+    message: "🌍 A creative director from Lucknow explored Aadrit’s portfolio",
     timeAgo: "35 mins ago",
   },
   {
@@ -45,15 +45,15 @@ const notifications: NotificationItem[] = [
     timeAgo: "45 mins ago",
   },
   {
-    message: "💫 A talent scout from Pune is exploring Aadrit’s expressions",
+    message: "💫 A campaign designer from Pune is exploring Aadrit’s expressions",
     timeAgo: "1 hour ago",
   },
   {
-    message: "✨ Someone from Shimla recently liked Aadrit's festive photoshoot",
+    message: "✨ Someone from Shimla recently liked Aadrit's lifestyle moments",
     timeAgo: "2 hours ago",
   },
   {
-    message: "🎨 A creative director from Haryana viewed the sizing & fit guide",
+    message: "🎨 A creative director from Haryana viewed the measurements guide",
     timeAgo: "3 hours ago",
   }
 ];

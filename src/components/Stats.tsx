@@ -92,7 +92,7 @@ function ReusableStats() {
               className="inline-flex items-center gap-2 border border-editorial-dark/10 hover:border-editorial-dark hover:text-luxury-gold font-display text-[10px] uppercase tracking-widest font-semibold py-1.5 px-3.5 transition-all duration-300 bg-white shadow-xs text-editorial-dark touch-manipulation min-h-[36px]"
             >
               <Award size={12} />
-              Print cast guidelines
+              Download Profile Sheet
             </button>
           </motion.div>
         </div>

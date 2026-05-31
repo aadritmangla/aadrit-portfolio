@@ -35,9 +35,15 @@ function ReusableFooter({ onPrivacyClick }: FooterProps) {
               <h3 className="font-serif text-2xl tracking-[0.2em] uppercase text-warm-beige">
                 {modelProfile.name}
               </h3>
-              <span className="font-display text-[9px] tracking-[0.3em] uppercase text-luxury-gold mt-2 block opacity-80">
-                Child Commercial Model • New Delhi
+              <span className="font-display text-[9px] tracking-[0.3em] uppercase text-luxury-gold mt-1 block opacity-80">
+                Expressive Child Creator
               </span>
+              <span className="font-display text-[9px] tracking-[0.3em] uppercase text-warm-beige/60 mt-0.5 block">
+                New Delhi, India
+              </span>
+              <p className="text-[11px] text-warm-beige font-sans mt-2 tracking-normal max-w-xs">
+                Making cameras smile since 2018 😄
+              </p>
             </div>
             
             {/* Socials - Unified Luxury Palette */}
@@ -45,7 +51,7 @@ function ReusableFooter({ onPrivacyClick }: FooterProps) {
               {[
                 { icon: Instagram, href: "https://instagram.com/aadritmangla", label: "Instagram" },
                 { icon: Mail, href: `mailto:${modelProfile.email}`, label: "Email" },
-                { icon: Phone, href: `https://wa.me/${modelProfile.phone.replace(/\s+/g, '')}`, label: "WhatsApp" },
+                { icon: Phone, href: `https://wa.me/${modelProfile.phone.replace(/\D/g, '')}`, label: "WhatsApp" },
               ].map((social, i) => (
                 <a
                   key={i}
@@ -64,14 +70,19 @@ function ReusableFooter({ onPrivacyClick }: FooterProps) {
 
           {/* Quick Navigation */}
           <ul className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-[10px] uppercase font-display tracking-[0.2em] text-warm-beige/60 font-medium">
-            {['about', 'portfolio', 'stats', 'booking'].map((id) => (
-              <li key={id}>
+            {[
+              { id: 'about', label: 'Profile' },
+              { id: 'portfolio', label: 'Portfolio' },
+              { id: 'stats', label: 'Measurements' },
+              { id: 'booking', label: 'Booking' },
+            ].map((item) => (
+              <li key={item.id}>
                 <a 
-                  href={`#${id}`} 
-                  onClick={(e) => handleScrollToSection(e, `#${id}`)} 
+                  href={`#${item.id}`} 
+                  onClick={(e) => handleScrollToSection(e, `#${item.id}`)} 
                   className="hover:text-luxury-gold transition-colors duration-300 uppercase"
                 >
-                  {id === 'stats' ? 'Measurements' : id}
+                  {item.label}
                 </a>
               </li>
             ))}
@@ -94,12 +105,12 @@ function ReusableFooter({ onPrivacyClick }: FooterProps) {
         {/* Bottom Bar: Copyright & Legal */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 text-[9px] tracking-widest text-warm-beige/40 font-display uppercase">
           <div className="text-center md:text-left">
-            <p>© {currentYear} {modelProfile.name}. ALL RIGHTS RESERVED.</p>
+            <p>© Aadrit Mangla. All Rights Reserved.</p>
           </div>
           
           <div className="flex items-center gap-4 text-center md:text-right">
             <span className="flex items-center gap-1">
-              Made with <span className="text-luxury-gold">❤️</span>
+              Made with ❤️
             </span>
             <span className="w-1 h-1 rounded-full bg-warm-beige/20" />
             <button
