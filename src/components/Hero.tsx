@@ -122,13 +122,6 @@ export default function Hero() {
               >
                 Watch Reels
               </button>
-              <button
-                id="hero-cta-pdf"
-                onClick={() => window.print()}
-                className="border border-luxury-gold/30 text-luxury-gold hover:text-white hover:bg-luxury-gold text-[10px] md:text-xs uppercase tracking-[0.15em] font-display font-bold py-3 px-6 transition-all duration-500 text-center bg-transparent active:scale-95 cursor-pointer font-black"
-              >
-                Profile Sheet (PDF)
-              </button>
             </motion.div>
 
             {/* Trust Badge / Availability */}

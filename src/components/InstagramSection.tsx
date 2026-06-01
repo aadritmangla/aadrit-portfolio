@@ -3,7 +3,7 @@ import { Instagram } from 'lucide-react';
 
 export default function InstagramSection() {
   return (
-    <section id="instagram-section" className="py-10 md:py-14 bg-white border-t border-warm-ivory scroll-mt-12 overflow-hidden">
+    <section id="instagram-section" className="py-6 md:py-8 bg-white border-t border-warm-ivory scroll-mt-12 overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

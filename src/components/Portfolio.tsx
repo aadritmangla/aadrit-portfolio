@@ -15,7 +15,7 @@ export default function ReusablePortfolio() {
 
   // Tabs mapping with rich, matching casting-director copy
   const tabs: { label: string; value: CategoryType; description: string }[] = [
-    { label: '✨ All Photos', value: 'all', description: "The complete selection of Aadrit's expressions, style, and moments." },
+    { label: '✨ All Photos', value: 'all', description: "" },
     { label: '✨ Expressions', value: 'expressions', description: '' },
     { label: '🌿 Lifestyle', value: 'lifestyle', description: 'Natural, playful, and everyday moments.' },
     { label: '📸 Fashion', value: 'fashion', description: 'Modern looks, styling, and campaign-ready photographs.' },
@@ -53,7 +53,7 @@ export default function ReusablePortfolio() {
   };
 
   return (
-    <section id="portfolio" className="py-6 md:py-10 bg-white border-t border-warm-ivory scroll-mt-12">
+    <section id="portfolio" className="py-4 md:py-6 bg-white border-t border-warm-ivory scroll-mt-12">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Section Header */}
@@ -164,6 +164,30 @@ export default function ReusablePortfolio() {
             ))}
           </AnimatePresence>
         </div>
+
+        {/* Profile Sheet Download Call-to-Action */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mt-10 pt-6 border-t border-editorial-dark/5 flex flex-col items-center text-center max-w-xl mx-auto space-y-4"
+        >
+          <div className="bg-warm-beige/30 border border-warm-ivory p-6 md:p-8 w-full text-center">
+            <span className="font-display text-[9px] tracking-[0.25em] uppercase text-luxury-gold font-bold block mb-3">
+              For Casting Directors & Agencies
+            </span>
+            <p className="text-[11px] md:text-xs text-editorial-gray/80 font-sans max-w-sm mx-auto leading-relaxed mb-6">
+              A single-page, ready-to-print comp card containing Aadrit’s exact measurements, contact details, and signature headshot.
+            </p>
+            <button
+              onClick={() => window.print()}
+              className="inline-flex items-center gap-2 bg-editorial-dark hover:bg-luxury-gold text-warm-beige text-[10px] md:text-xs uppercase tracking-[0.16em] font-display font-black py-3 px-8 transition-all duration-300 active:scale-95 cursor-pointer shadow-md"
+            >
+              Print Casting Sheet (PDF)
+            </button>
+          </div>
+        </motion.div>
 
         {/* Lightbox Modal slider */}
         <AnimatePresence>

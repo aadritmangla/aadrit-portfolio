@@ -6,7 +6,7 @@ import { modelProfile } from '../data';
 
 export default function ContactSection() {
   return (
-    <section id="booking" className="py-10 md:py-14 bg-warm-beige border-t border-warm-ivory scroll-mt-12">
+    <section id="booking" className="py-6 md:py-8 bg-warm-beige border-t border-warm-ivory scroll-mt-12">
       <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

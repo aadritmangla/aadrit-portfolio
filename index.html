@@ -8,7 +8,7 @@
     <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
     <meta name="google-site-verification" content="Mh_a0m2g6NTsQdt07xWDl3OgkKdNXiZHo-N55kRvW8U" />
     
-    <link rel="canonical" href="https://aadritmangla.vercel.app" />
+    <link rel="canonical" href="https://aadritmangla.vercel.app/" />
     <meta name="theme-color" content="#faf9f6" />
     
     <!-- SEO and Crawl Directives -->
@@ -47,27 +47,73 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Aadrit Mangla",
-      "jobTitle": "Child Commercial Model",
-      "gender": "Male",
-      "nationality": "Indian",
-      "birthDate": "2018",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "New Delhi",
-        "addressRegion": "Delhi",
-        "addressCountry": "IN"
-      },
-      "url": "https://aadritmangla.vercel.app",
-      "knowsLanguage": ["English", "Hindi"],
-      "description": "Official kids design and apparel commercial catalog of Aadrit Mangla, 8, New Delhi. Represented and managed by parents.",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-9971271291",
-        "contactType": "parent-guardian",
-        "email": "aadritmangla@gmail.com"
-      }
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://aadritmangla.vercel.app/#person",
+          "name": "Aadrit Mangla",
+          "jobTitle": ["Child Commercial Model", "Child Actor"],
+          "gender": "Male",
+          "nationality": {
+            "@type": "Country",
+            "name": "India"
+          },
+          "birthDate": "2018",
+          "height": {
+            "@type": "QuantitativeValue",
+            "value": "126",
+            "unitCode": "CMT",
+            "unitText": "cm"
+          },
+          "additionalName": "Aadrit",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "New Delhi",
+            "addressRegion": "Delhi",
+            "addressCountry": "IN"
+          },
+          "url": "https://aadritmangla.vercel.app/",
+          "sameAs": [
+            "https://www.instagram.com/aadritmangla"
+          ],
+          "knowsLanguage": ["English", "Hindi"],
+          "description": "Aadrit Mangla is a highly expressive 8-year-old child actor and commercial model from New Delhi, India. He coordinates with leading brands for apparel, lifestyle shoot campaigns, and television commercials (TVC).",
+          "knowsAbout": [
+            "Child modeling",
+            "Apparel shoot campaigns",
+            "TV commercials",
+            "Lifestyle and fashion campaigns",
+            "Ethnic and traditional shoots"
+          ],
+          "parent": {
+            "@type": "Person",
+            "name": "Rahul Mangla",
+            "jobTitle": "Manager & Guardian",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+91-9971271291",
+              "contactType": "parent-manager",
+              "email": "aadritmangla@gmail.com"
+            }
+          }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://aadritmangla.vercel.app/#webpage",
+          "url": "https://aadritmangla.vercel.app/",
+          "name": "Aadrit Mangla - Official Commercial Model Portfolio",
+          "about": {
+            "@id": "https://aadritmangla.vercel.app/#person"
+          },
+          "description": "The digital portfolio of child commercial model Aadrit Mangla based in New Delhi.",
+          "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://aadritmangla.vercel.app/#website",
+            "url": "https://aadritmangla.vercel.app/",
+            "name": "Aadrit Mangla Portfolio"
+          }
+        }
+      ]
     }
     </script>
   </head>

@@ -163,13 +163,6 @@ function Header({ isDarkMode = false, toggleDarkMode }: HeaderProps) {
               </a>
             </div>
 
-            <button
-              onClick={() => window.print()}
-              className="inline-flex items-center gap-1.5 border border-editorial-dark/15 hover:border-luxury-gold text-editorial-dark hover:text-luxury-gold text-[10px] uppercase tracking-widest font-display font-bold py-2 px-4 transition-all duration-300 rounded-full cursor-pointer bg-white/40"
-            >
-              Profile Sheet (PDF)
-            </button>
-
             <a
               href="https://wa.me/919971271291"
               target="_blank"
@@ -253,16 +246,6 @@ function Header({ isDarkMode = false, toggleDarkMode }: HeaderProps) {
               Book Aadrit
               <ArrowRight size={14} />
             </a>
-
-            <button
-              onClick={() => {
-                setIsOpen(false);
-                window.print();
-              }}
-              className="w-full inline-flex justify-center items-center gap-2 bg-white text-editorial-dark border border-editorial-dark/10 hover:border-luxury-gold hover:text-luxury-gold text-xs uppercase tracking-widest font-display font-medium py-3.5 px-5 transition-all duration-300 rounded-full shadow-xs"
-            >
-              Profile Sheet (PDF)
-            </button>
 
             {/* Mobile Social Links Segment */}
             <div className="mt-8 pt-6 border-t border-editorial-dark/5 flex justify-center gap-6">
