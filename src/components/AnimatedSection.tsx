@@ -1,7 +1,7 @@
-import { motion, useInView } from 'framer-motion';
-import { type ReactNode, useRef } from 'react';
+import { useRef, type ReactNode } from 'react';
+import { motion, useInView } from 'motion/react';
 
-type AnimationVariant = 'fade' | 'slide' | 'scale' | 'blur';
+type AnimationVariant = 'fadeUp' | 'fadeIn' | 'scaleIn' | 'blurReveal';
 
 interface AnimatedSectionProps {
   children: ReactNode;
@@ -13,42 +13,50 @@ interface AnimatedSectionProps {
 }
 
 const variants = {
-  fade: {
+  fadeUp: {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  },
+  fadeIn: {
     hidden: { opacity: 0 },
-    visible: { opacity: 1 }
+    visible: { opacity: 1 },
   },
-  slide: {
-    hidden: { opacity: 0, y: 24 },
-    visible: { opacity: 1, y: 0 }
+  scaleIn: {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { opacity: 1, scale: 1 },
   },
-  scale: {
-    hidden: { opacity: 0, scale: 0.97 },
-    visible: { opacity: 1, scale: 1 }
+  blurReveal: {
+    hidden: { opacity: 0, filter: 'blur(12px)', y: 20 },
+    visible: { opacity: 1, filter: 'blur(0px)', y: 0 },
   },
-  blur: {
-    hidden: { opacity: 0, filter: 'blur(12px)', y: 12 },
-    visible: { opacity: 1, filter: 'blur(0px)', y: 0 }
-  }
 };
 
-export function AnimatedSection({
+export default function AnimatedSection({
   children,
   className = '',
   delay = 0,
-  variant = 'fade',
+  variant = 'fadeUp',
   once = true,
-  amount = 0.2
+  amount = 0.2,
 }: AnimatedSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once, amount });
+
+  const config = {
+    ...variants[variant],
+    transition: {
+      duration: 0.7,
+      delay,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  };
 
   return (
     <motion.div
       ref={ref}
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
-      variants={variants[variant]}
-      transition={{ duration: 0.7, delay, ease: [0.25, 0.1, 0.25, 1] }}
+      variants={config}
       className={className}
     >
       {children}
