@@ -43,7 +43,6 @@ function Header({ isDarkMode = false, toggleDarkMode }: HeaderProps) {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      // Simple active section detection
       const sections = ['home', 'about', 'portfolio', 'booking'];
       const scrollPosition = window.scrollY + 100;
 
@@ -76,31 +75,6 @@ function Header({ isDarkMode = false, toggleDarkMode }: HeaderProps) {
       target.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-
-      // Simple active section detection
-      const sections = ['home', 'about', 'portfolio', 'booking'];
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <header
@@ -312,4 +286,3 @@ function Header({ isDarkMode = false, toggleDarkMode }: HeaderProps) {
 }
 
 export default React.memo(Header);
-

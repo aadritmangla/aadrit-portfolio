@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -45,17 +46,27 @@ export default function App() {
       <div className="print:hidden relative min-h-screen bg-warm-beige text-editorial-dark font-sans overflow-x-hidden selection:bg-luxury-gold selection:text-white transition-colors duration-500">
         <Preloader />
         <CinematicCursor />
-        
+
         {/* Premium Top Navigation */}
         <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
 
         {/* Main Structural Layout blocks */}
         <main className="relative">
-          <Hero />
-          <About />
-          <Portfolio />
-          <InstagramSection />
-          <ContactSection />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key="main-content"
+              initial={{ opacity: 0, scale: 0.97, filter: 'blur(12px)' }}
+              animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+              exit={{ opacity: 0, scale: 0.97, filter: 'blur(12px)' }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <Hero />
+              <About />
+              <Portfolio />
+              <InstagramSection />
+              <ContactSection />
+            </motion.div>
+          </AnimatePresence>
         </main>
 
         {/* Quiet Social Engagement Signals */}

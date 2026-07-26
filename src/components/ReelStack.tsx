@@ -5,17 +5,17 @@ import { Play, Pause } from 'lucide-react';
 const REELS = [
   {
     id: 'r1',
-    src: '/assets/videos/reel-01.mp4',
+    src: '/videos/reel-01.mp4',
     title: 'Commercial Lifestyle'
   },
   {
     id: 'r2',
-    src: '/assets/videos/reel-02.mp4',
+    src: '/videos/reel-02.mp4',
     title: 'Editorial Motion'
   },
   {
     id: 'r3',
-    src: '/assets/videos/reel-03.mp4',
+    src: '/videos/reel-03.mp4',
     title: 'Action & Energy'
   },
 ];

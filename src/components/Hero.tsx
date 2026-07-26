@@ -1,5 +1,5 @@
-import { motion, useInView } from 'framer-motion';
-import { ArrowDown, CheckCircle, MapPin } from 'lucide-react';
+import { motion } from 'motion/react';
+import { ArrowDown, CheckCircle } from 'lucide-react';
 import { modelProfile } from '../data';
 
 export default function Hero() {
@@ -10,15 +10,21 @@ export default function Hero() {
     }
   };
 
+  const words = modelProfile.name.split(' ');
+
   return (
     <section
       id="home"
-      className="relative min-h-[85vh] lg:min-h-[90vh] flex items-center bg-warm-beige pt-20 md:pt-0 overflow-hidden scroll-mt-12"
+      className="relative min-h-[100vh] flex items-center bg-warm-beige pt-20 md:pt-0 overflow-hidden scroll-mt-12"
     >
       {/* Background soft geometric detail */}
-      <div className="absolute right-0 top-0 w-1/3 h-full bg-warm-ivory hidden lg:block -z-1" />
+      <motion.div
+        className="absolute right-0 top-0 w-1/3 h-full bg-warm-ivory hidden lg:block -z-1"
+        animate={{ x: [0, -20, 0] }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
+      />
 
-      {/* Cinematic video background layer */}
+      {/* Cinematic video/fallback background */}
       <div className="absolute inset-0 -z-20 overflow-hidden">
         <video
           className="w-full h-full object-cover opacity-40"
@@ -27,7 +33,7 @@ export default function Hero() {
           muted
           playsInline
           preload="metadata"
-          poster="/images/hero.webp"
+          poster={modelProfile.heroImage}
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
@@ -51,12 +57,24 @@ export default function Hero() {
         transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
       />
 
+      {/* Parallax layers */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none"
+        animate={{ y: [0, -30, 0], x: [0, 15, 0] }}
+        transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}
+      >
+        <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-luxury-gold/10 blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-luxury-gold/10 blur-3xl" />
+      </motion.div>
+
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full py-6 md:py-8 lg:py-10 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-center">
-          
           {/* Text/Details Side */}
-          <div className="lg:col-span-5 z-10 space-y-3.5 md:space-y-5 flex flex-col justify-center order-2 lg:order-1">
-            
+          <motion.div
+            className="lg:col-span-5 z-10 space-y-3.5 md:space-y-5 flex flex-col justify-center order-2 lg:order-1"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+          >
             {/* Top Agency Tag/Availability */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
@@ -68,16 +86,21 @@ export default function Hero() {
               <span>EXPRESSIVE CHILD CREATOR • NEW DELHI</span>
             </motion.div>
 
-            {/* Main Name & Subtitle */}
+            {/* Word-by-word headline with stagger */}
             <div className="space-y-2 md:space-y-3">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                className="font-serif text-4xl sm:text-6xl lg:text-7xl xl:text-8xl text-editorial-dark tracking-tighter leading-[0.95]"
-              >
-                {modelProfile.name}
-              </motion.h1>
+              <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl xl:text-8xl text-editorial-dark tracking-tighter leading-[0.95] flex flex-wrap gap-x-4">
+                {words.map((word, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0, filter: 'blur(12px)', y: 20 }}
+                    animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.1 + i * 0.12 }}
+                    className="inline-block"
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </h1>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -173,7 +196,7 @@ export default function Hero() {
               </div>
               <span className="text-[10px] text-editorial-gray/80 font-medium">Top Rated Child Talent • New Delhi</span>
             </motion.div>
-          </div>
+          </motion.div>
 
           {/* Image Side */}
           <div className="lg:col-span-7 flex justify-center lg:justify-end order-1 lg:order-2">
@@ -185,7 +208,7 @@ export default function Hero() {
             >
               {/* Decorative Frame outline */}
               <div className="absolute -inset-3 border border-black/20 transform translate-x-1 translate-y-1 pointer-events-none" />
-              
+
               {/* Premium Image Container */}
               <div className="w-full h-full overflow-hidden shadow-2xl border border-black bg-black relative group">
                 <img
@@ -200,7 +223,7 @@ export default function Hero() {
                     e.currentTarget.parentElement?.classList.add('bg-warm-beige');
                   }}
                 />
-                
+
                 {/* Photo Tag */}
                 <span className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm text-editorial-dark text-[7px] tracking-[0.25em] uppercase font-display font-bold py-1 px-2 border border-warm-ivory">
                   HeadShot

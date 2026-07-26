@@ -14,42 +14,42 @@ export const modelProfile: ModelProfile = {
   parentManager: 'Represented by Parents (Rahul Mangla)',
   shortBio: 'Aadrit is an expressive child creator who loves performing, dancing, and bringing stories to life. A smile people remember. An energy cameras love.',
   detailedBio: "Aadrit is happiest when he's performing.\nWhether he's dancing, creating content, or simply having fun in front of the camera, he brings genuine energy and a smile that's hard to miss.",
-  
-  // THE HERO IMAGE (Local path)
-  heroImage: "/images/hero.webp",
+
+  // THE HERO IMAGE
+  heroImage: '/images/hero.webp',
   gallery: [
     {
-      url: "/images/gallery/aadrit-main-headshot.webp",
+      url: '/images/gallery/aadrit-main-headshot.webp',
       category: "Portrait",
       alt: "Aadrit Mangla - Signature High-End Kids Casting Headshot"
     },
     {
-      url: "/images/gallery/aadrit-commercial-2.webp",
+      url: '/images/gallery/aadrit-commercial-2.webp',
       category: "Portrait",
       alt: "Aadrit Mangla - Expressive Child Model Portrait"
     },
     {
-      url: "/images/gallery/aadrit-traditional.webp",
+      url: '/images/gallery/aadrit-traditional.webp',
       category: "Traditional",
       alt: "Aadrit Mangla - Traditional Indian Festive Wear Casting"
     },
     {
-      url: "/images/gallery/aadrit-prada-milano.webp",
+      url: '/images/gallery/aadrit-prada-milano.webp',
       category: "Editorial",
       alt: "Aadrit Mangla - High-Fashion Magazine Editorial"
     },
     {
-      url: "/images/gallery/aadrit-travel.webp",
+      url: '/images/gallery/aadrit-travel.webp',
       category: "Outdoor",
       alt: "Aadrit Mangla - Natural Light Outdoor Child Modeling"
     },
     {
-      url: "/images/gallery/aadrit-red-shirt.webp",
+      url: '/images/gallery/aadrit-red-shirt.webp',
       category: "Action",
       alt: "Aadrit Mangla - Dynamic Action and Stunt Pose Child Actor"
     },
     {
-      url: "/images/gallery/aadrit-full-length.webp",
+      url: '/images/gallery/aadrit-full-length.webp',
       category: "Full Length",
       alt: "Aadrit Mangla - Full Length Commercial Model Pose"
     }
@@ -82,7 +82,7 @@ export const galleryItems: GalleryItem[] = modelProfile.gallery.map((item, index
   } else if (c.includes('editorial') || c.includes('full') || c.includes('commercial')) {
     category = 'fashion';
   }
-  
+
   return {
     id: `g-${index}`,
     src: item.url,

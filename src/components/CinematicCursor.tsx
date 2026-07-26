@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 
 export default function CinematicCursor() {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const magneticRef = useRef<{ x: number; y: number } | null>(null);
 
   const [dotProps, dotApi] = useSpring(() => ({
     x: 0,
@@ -27,15 +28,30 @@ export default function CinematicCursor() {
     const handleMove = (e: MouseEvent) => {
       const x = e.clientX;
       const y = e.clientY;
-      
-      dotApi.start({ x, y, scale: isHovering ? 1.6 : 1 });
-      ringApi.start({ x, y, scale: isHovering ? 1.4 : 1, opacity: isHovering ? 0.8 : 0.5 });
-      
+      const targetScale = isHovering ? 1.8 : 1;
+      const ringScale = isHovering ? 1.6 : 1;
+      const ringOpacity = isHovering ? 0.9 : 0.5;
+
+      dotApi.start({ x, y, scale: targetScale });
+      ringApi.start({ x, y, scale: ringScale, opacity: ringOpacity });
+
       if (!isVisible) setIsVisible(true);
     };
 
-    const handleEnterInteractive = () => setIsHovering(true);
-    const handleLeaveInteractive = () => setIsHovering(false);
+    const handleEnterInteractive = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const rect = target.getBoundingClientRect();
+      magneticRef.current = {
+        x: rect.left + rect.width / 2,
+        y: rect.top + rect.height / 2,
+      };
+      setIsHovering(true);
+    };
+
+    const handleLeaveInteractive = () => {
+      magneticRef.current = null;
+      setIsHovering(false);
+    };
 
     window.addEventListener('mousemove', handleMove);
 
@@ -56,25 +72,36 @@ export default function CinematicCursor() {
 
   if (!isVisible) return null;
 
+  const dotSize = 24;
+  const ringSize = 56;
+  const dotOffset = dotSize / 2;
+  const ringOffset = ringSize / 2;
+
   return (
     <>
       <animated.div
-        className="fixed top-0 left-0 w-3 h-3 rounded-full bg-luxury-gold pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 rounded-full bg-luxury-gold pointer-events-none z-[9999]"
         style={{
-          x: dotProps.x.to((x) => x - 6),
-          y: dotProps.y.to((y) => y - 6),
+          width: dotSize,
+          height: dotSize,
+          x: dotProps.x.to((x) => x - dotOffset),
+          y: dotProps.y.to((y) => y - dotOffset),
           scale: dotProps.scale,
           mixBlendMode: 'difference',
+          willChange: 'transform, opacity',
         }}
       />
       <animated.div
-        className="fixed top-0 left-0 w-10 h-10 rounded-full border border-luxury-gold/50 pointer-events-none z-[9998]"
+        className="fixed top-0 left-0 rounded-full border border-luxury-gold/70 pointer-events-none z-[9998]"
         style={{
-          x: ringProps.x.to((x) => x - 20),
-          y: ringProps.y.to((y) => y - 20),
+          width: ringSize,
+          height: ringSize,
+          x: ringProps.x.to((x) => x - ringOffset),
+          y: ringProps.y.to((y) => y - ringOffset),
           scale: ringProps.scale,
           opacity: ringProps.opacity,
           mixBlendMode: 'difference',
+          willChange: 'transform, opacity',
         }}
       />
     </>

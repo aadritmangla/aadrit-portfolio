@@ -52,6 +52,10 @@ async function startServer() {
     res.status(200).json({ url: null });
   });
 
+  // Serve local assets from Desktop/assets
+  const assetsPath = path.join('C:\\Users\\QEnic\\Desktop\\assets');
+  app.use('/assets', express.static(assetsPath));
+
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
@@ -62,6 +66,7 @@ async function startServer() {
   } else {
     const distPath = path.join(process.cwd(), 'dist');
     app.use(express.static(distPath));
+    app.use('/assets', express.static(assetsPath));
     app.get('*', (req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
     });
