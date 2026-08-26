@@ -23,24 +23,6 @@ export default defineConfig(() => {
           drop_debugger: true,
         },
       },
-      rollupOptions: {
-        output: {
-          manualChunks(id) {
-            if (id.includes('node_modules')) {
-              if (id.includes('react') || id.includes('react-dom')) {
-                return 'vendor';
-              }
-              if (id.includes('motion')) {
-                return 'motion';
-              }
-              if (id.includes('lucide-react')) {
-                return 'icons';
-              }
-              return 'deps';
-            }
-          }
-        }
-      }
     }
   };
 });
